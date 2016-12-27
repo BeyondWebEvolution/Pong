@@ -7,7 +7,6 @@ package{
 	import flash.text.TextFormatAlign;
 	
 	public class Label extends TextField{
-		
 		private var _format:TextFormat; 
 		public function Label(text:String, size:Number = 14, color:uint = 0xFFFFFF, fontName:String = "Verdana", embedFonts:Boolean = false){
 			super();
@@ -40,5 +39,4 @@ package{
 			this.setTextFormat(_format); 
 		}
 	}
-
 }

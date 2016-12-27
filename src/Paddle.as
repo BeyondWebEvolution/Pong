@@ -1,26 +1,15 @@
-package 
-{
+package {
 	import flash.display.Sprite;
 	import flash.ui.Keyboard;
-	
-	/**
-	* PADDLES
-	 * 	readInput
-	 * 	reset()
-	 * 	update
-	 */
 	public class Paddle extends Entity{
-		
 		private var _isLeft:Boolean = false; 
 		private var _acceleration:Number = 0; 
 		private var _baseSpeed:Number = 5; 
 		private var _friction:Number = .9
-		
 		public function Paddle(isLeft:Boolean) 
 		{
 			super();
 			_isLeft = isLeft; 
-			
 			draw();
 			reset(); 
 		}
@@ -37,14 +26,6 @@ package
 		
 		private function checkInput():void{
 			if (_isLeft){
-				/*if (Key.isDown(Keyboard.S)){
-					_vy = (++_acceleration); 
-				}else if (Key.isDown(Keyboard.W)){
-					_vy = (--_acceleration);
-				}else {
-					_acceleration = 0; 
-				}*/
-				
 				_vy = 0
 				if (Key.isDown(Key.DOWNLEFT)){
 					_vy = 15; 
@@ -53,9 +34,6 @@ package
 					_vy = -15;
 				}
 			} else {
-				//removed mouse commands to avoid giving one player an advantage
-				//var dy:Number = stage.mouseY - this.centerY; 
-				//_vy = (dy* .125); //gives acceleration easing 
 				_vy = 0
 				if (Key.isDown(Key.DOWNRIGHT)){
 					_vy = 15; 
@@ -63,10 +41,8 @@ package
 				if (Key.isDown(Key.UPRIGHT)){
 					_vy = -15;
 				}
-				
 			}
 		}
-		
 		
 		override public function update():void{
 			checkInput(); 

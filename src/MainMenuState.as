@@ -3,8 +3,6 @@ package {
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
-	
-	
 	public class MainMenuState extends Sprite implements IState{
 		private var _fsm:Document;
 		private var _label:Label = new Label ("Pong!", 184, Config.WHITE, Config.DEFAULT_FONT, true); 
@@ -13,7 +11,7 @@ package {
 		private var _instructionButton:SimpleButton = new SimpleButton(Assets.getImage("instruction"), 
 							Assets.getImage("instruction"), Assets.getImage("instruction"), Assets.getImage("instruction")); 
 		
-		private var _backgroundSFX:SimpleSound = new SimpleSound("./assets/spashscreensound.mp3"); //("./assets/splashscreensound.mp3"); 
+		private var _backgroundSFX:SimpleSound = new SimpleSound("./assets/spashscreensound.mp3"); 
 		private var _startSFX:SimpleSound = new SimpleSound("./assets/startGame.mp3"); 
 		public function MainMenuState(fsm:Document){
 			super();
@@ -60,9 +58,6 @@ package {
 			
 			_backgroundSFX = null;
 			_startSFX = null; 
-		
-	
 		} 
 	}
-
 }

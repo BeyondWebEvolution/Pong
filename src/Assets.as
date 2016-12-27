@@ -1,13 +1,8 @@
-package 
-{
+package {
 	import flash.display.Bitmap;
-	public class Assets 
-	{
+	public class Assets {
+		public function Assets() {}
 		
-		public function Assets() 
-		{
-			
-		}
 		[Embed(source = "assets/Chunkfive.otf",
 			fontName = "ChunkFive", 
 			mimeType = "application/x-font",
@@ -31,9 +26,6 @@ package
 		[Embed(source = "assets/Back-Button.png")]
 		public static const BackButton:Class;
 		
-		[Embed(source = "assets/Resume.png")]
-		public static const Resume:Class; 
-		
 		public static function getImage(n:String):Bitmap{
 			var imgClass:Class = ButtonNormal; 
 			if (n == "click"){
@@ -44,11 +36,8 @@ package
 				imgClass = InstructionButton; 
 			} else if (n == "back"){
 				imgClass = BackButton; 
-			} else if (n == "resume"){
-				imgClass = Resume; 
-			}
+			} 
 			return new imgClass() as Bitmap;
 		}
 	}
-
 }

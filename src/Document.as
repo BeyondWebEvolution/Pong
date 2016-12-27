@@ -26,10 +26,9 @@ package
 			addEventListener(Event.ENTER_FRAME, onEnterFrame, false, 0, true); 
 			addEventListener(Event.DEACTIVATE, onDeactivate, false, 0, true); 
 			Key.init(stage); 
-			changeState(MENU_STATE)
-
-			
+			changeState(MENU_STATE);
 		}
+		
 		private function onDeactivate(e:Event):void{
 			removeEventListener(Event.ENTER_FRAME, onEnterFrame);
 			addEventListener(Event.ACTIVATE, onActivate, false, 0, true);
@@ -39,6 +38,7 @@ package
 			removeEventListener(Event.ACTIVATE, onActivate);
 			addEventListener(Event.ENTER_FRAME, onEnterFrame, false, 0, true);
 		}
+		
 		public function changeState(nextState:Number):void{
 			if (_currentState != null){
 				_currentState.destroy(); 
@@ -51,13 +51,10 @@ package
 				_currentState = new InstructionState(this); 
 			} else if (nextState == GAME_OVER_STATE){
 				_currentState = new GameOverState(this); 
-			} else {//nextstate == menu_state
+			} else {
 				_currentState = new MainMenuState(this); 
 			}
-			
 			addChild(Sprite(_currentState));
-			
-			
 		}
 		
 		private function onEnterFrame(e:Event):void{

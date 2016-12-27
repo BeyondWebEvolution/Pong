@@ -1,12 +1,5 @@
-package 
-{
-	/**
-	 * ...
-	 * @author Clinton Tak
-	 */
-	public class Config 
-	{
-		
+package{
+	public class Config {
 		public function Config(){}
 		
 		public static const BLACK:uint = 0x000000;

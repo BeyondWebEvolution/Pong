@@ -1,11 +1,8 @@
 package {
 	import flash.geom.Point;
 	public class Utils {
+		public function Utils(){}
 		
-		public function Utils() 
-		{
-			
-		}
 		public static function random(min:Number, max:Number):Number{
 			return Math.random() * (max - min + 1) + min; 
 		}
@@ -16,14 +13,14 @@ package {
 			overlap.setTo(0, 0);
 			var centerDeltaX:Number = e1.centerX - e2.centerX;
 			var halfWidths:Number = (e1.width + e2.width) * 0.5;
-		 
-			if (Math.abs(centerDeltaX) > halfWidths) return false; //no overlap on x == no collision
-		 
+			if (Math.abs(centerDeltaX) > halfWidths){//no overlap on x == no collision
+				return false; 
+			}
 			var centerDeltaY:Number = e1.centerY - e2.centerY;
 			var halfHeights:Number = (e1.height + e2.height) * 0.5;
-		 
-			if (Math.abs(centerDeltaY) > halfHeights) return false; //no overlap on y == no collision
-		 
+			if (Math.abs(centerDeltaY) > halfHeights){//no overlap on y == no collision
+				return false; 
+			}
 			var dx:Number = halfWidths - Math.abs(centerDeltaX); //overlap on x
 			var dy:Number = halfHeights - Math.abs(centerDeltaY); //overlap on y
 			if (dy < dx) {

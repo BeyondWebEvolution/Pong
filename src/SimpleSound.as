@@ -1,14 +1,11 @@
-package 
-{
-
+package{
 	import flash.events.Event;
 	import flash.media.Sound;
 	import flash.media.SoundChannel;
 	import flash.media.SoundTransform;
 	import flash.net.URLRequest;
 	
-
-	public class SimpleSound implements IState{
+	public class SimpleSound{
 		private var _sound:Sound;
 		private var _channel:SoundChannel; 
 		public function SimpleSound(url:String){
@@ -27,16 +24,10 @@ package
 		public function stopSound():void{
 			_channel.stop();
 		}
-		
-		public function update():void{
-		}
 
 		public function destroy():void{
 			_sound = null; 
 			_channel = null; 
 		}
-	
- 
 	}
-
 }

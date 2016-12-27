@@ -1,16 +1,5 @@
-package 
-{
+package{
 	import flash.display.Sprite;
-	
-	
-	/**entity
-	 * velocity on x/y
-	 * update ()
-	 * boundsCheck
-	 * onCollision(Entity)
-	 * reset()
-	 * 
-	 */
 	public class Entity extends Sprite {
 		public function get halfHeight():Number { return height * 0.5;  }
 		public function get halfWidth():Number { return width * 0.5;  }
@@ -33,34 +22,25 @@ package
 		protected var _vy:Number = 0; 
 		protected var _color:uint = Config.RED; 
 		
-		public function Entity() 
-		{
+		public function Entity() {
 			super();
-			
 		}
+		
 		public function reset():void{
 			_vx = 0;
 			_vy = 0; 
 		}
+		
 		public function update():void{
 			x += _vx;
 			y += _vy; 
 			boundsCheck(); 
 		}
 		
-		public function destroy():void{
-			//Clean up any refernce we're holding
-			//remove event listeners 
-			
-		}
-		public function boundsCheck():void{
-			
-		}
-		public function onCollision(e:Entity):void{
-			
-		}
+		public function destroy():void{}
 		
+		public function boundsCheck():void{}
 		
+		public function onCollision(e:Entity):void{}
 	}
-
 }
